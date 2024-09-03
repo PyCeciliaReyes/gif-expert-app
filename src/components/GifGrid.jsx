@@ -1,12 +1,12 @@
+import { getGifs } from "../helpers/getGifs";
 
 export const GifGrid = ({category}) => {
-    //realizar peticion http
-
+    
+    getGifs(category);
 
     return(
         <>
             <h3>{category}</h3>
-            <p>hola</p>
         </>
     );
 };
