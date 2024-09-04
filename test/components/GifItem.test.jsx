@@ -1,15 +1,25 @@
-import { render } from "@testing-library/react";
+import { render, screen } from "@testing-library/react";
 import { GifItem } from "../../src/components/GifItem";
 
 describe('Prueba en GifItem', () => {
     const title = 'Saitama'
     const url = 'https://one-punch.com/saitama.jpg'
+    
     test('debe de hacer el match con el snapshot', () => {
         const {container} =render( <GifItem title={title} url={url}/> )
         expect (container).toMatchSnapshot();
     });
 
-    // test('debe de salir error por el PropType requerido', () => {
+    test('debe de mostrar la imagen con el URL y el ALT indicado', () => {
+        render( <GifItem title={title} url={url}/>)
+        //expect(screen.getByRole('img').src).toBe(url)
+        const {src, alt} = screen.getByRole('img');
+        expect(src).toBe(url);
+        expect(alt).toBe(alt);
+    });
 
-    // });
+    test('debe de mostrar el titulo en el componente', () =>{
+        render( <GifItem title={title} url={url}/>)
+        expect( screen.getByText(title)).toBeTruthy();
+    })
 });
