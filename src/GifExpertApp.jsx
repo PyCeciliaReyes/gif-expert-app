@@ -1,5 +1,5 @@
 import { useState } from "react";
-import { AddCategory, GifGrid } from "./components";
+import { AddCategory, GifGrid, Switch } from "./components";
 
 export const  GifExpertApp = () => {
 
@@ -16,7 +16,7 @@ export const  GifExpertApp = () => {
 
     return(
         <>
-            <h1>Gif Expert App</h1>
+            <h2>Gif Expert App</h2>
             
             <AddCategory 
                 //setCategories = { setCategories }
